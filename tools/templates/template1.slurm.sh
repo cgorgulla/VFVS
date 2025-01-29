@@ -37,7 +37,7 @@
 ##SBATCH --mem-per-cpu=800M
 ##SBATCH --nodes=1
 #SBATCH --cpus-per-task={{slurm_cpus}}
-##SBATCH --partition={{slurm_partition}}
+#SBATCH --partition={{slurm_partition}}
 #SBATCH --output={{batch_workunit_base}}/%A_%a.out
 #SBATCH --error={{batch_workunit_base}}/%A_%a.err
 #SBATCH --account={{slurm_account}}

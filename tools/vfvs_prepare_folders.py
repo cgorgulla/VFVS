@@ -264,6 +264,17 @@ def check_parameters(config):
     else:
         config['prescreen_ligands_per_tranche'] = 0
 
+    if(empty_value(config, 'run_pose_check')):
+        config['run_pose_check'] = 0
+    if(empty_value(config, 'pose_check_timeout')):
+        config['pose_check_timeout'] = 0
+    if(empty_value(config, 'run_energy_check')):
+        config['run_energy_check'] = 0
+    if(empty_value(config, 'energy_max')):
+        config['energy_max'] = 10000
+    if(empty_value(config, 'obenergy_timeout')):
+        config['obenergy_timeout'] = 30
+
     return error
 
 

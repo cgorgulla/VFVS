@@ -34,8 +34,8 @@ export VFVS_VCPUS={{threads_to_use}}
 
 for i in `seq 0 {{array_end}}`; do
 	export VFVS_WORKUNIT_SUBJOB=${i}
-	echo "Workunit ${VFVS_WORKUNIT}:${VFVS_WORKUNIT_SUBJOB}: output in {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.out"
+	echo "Workunit ${VFVS_WORKUNIT}:${VFVS_WORKUNIT_SUBJOB}: stdout in {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.out, stderr in {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.err"
 	date +%s > {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.start
-	./templates/vfvs_run.py &> {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.out
+	./templates/vfvs_run.py > {{batch_workunit_base}}/$$_${VFVS_WORKUNIT_SUBJOB}.out 2> {{batch_workunit_base}}/$$_${VFVS_WORKUNIT_SUBJOB}.err
 	date +%s > {{batch_workunit_base}}/${VFVS_WORKUNIT_SUBJOB}.end
 done

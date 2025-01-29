@@ -23,6 +23,11 @@ source $HOME/vfvs_env/bin/activate
 python3 -m pip install boto3 pandas pyarrow jinja2
 ```
 
+If the `vfvs_get_top_results.py` script shall be used to extract the top results after screening, additional python packages are needed. To install these:
+```bash
+python3 -m pip install tqdm
+```
+
 To exit a virtual environment:
 ```bash
 deactivate
@@ -162,4 +167,5 @@ workload/output/ligand-lists/<metatranche>/<tranche>/<collection_num>.status.gz
 workload/output/ligand-lists/<metatranche>/<tranche>/<collection_num>.json.gz
 ````
 
+The top results can also be extracted using the `tools/vfvs_get_top_results.py` script (execute `vfvs_get_top_results.py --help` for more info).
 
